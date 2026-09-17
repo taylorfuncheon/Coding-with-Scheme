@@ -1,4 +1,5 @@
-1. czr: return the last element of a list :
+; czr: return the last element of a list
+; czr returns () for an empty list because there is no last item.
 > (define czr
 (lambda (L)
 (if (null? L)
@@ -10,7 +11,8 @@
 6
 
 
-2. count: return how many items are in a list. Use czr as a guide to traversing the list. 
+; count: return how many items are in a list. Use czr as a guide to traversing the list.
+; count returns 0 for an empty list because there are no items to count.
 > (define count
 (lambda (L)
 (if(null? L)
@@ -25,7 +27,8 @@
 
 
 
-3. reverse-list: reverse a list using only car, cdr, and append. 
+; reverse-list: reverse a list using only car, cdr, and append.
+; reverse-list returns () for an empty list because there is nothing to reverse.
 > (define reverse-list
 (lambda (L)
 (if (null? L)
@@ -44,7 +47,8 @@
 (d c b a)
 
 
-4. largest: return the largest element. 
+; largest: return the largest element. 
+; largest returns () for an empty list because there is no largest number.
 > (define largest
 (lambda (L)
 (if (null? L)
@@ -57,10 +61,24 @@
 x))))))
 > (largest '(1 9 2 3 7))
 9
-> (largest '(a c h d e))
-*** ERROR IN largest, console@8:5 -- (Argument 1) REAL expected
-(>= 'd 'e)
-1> 
+> (largest '(1 2 3 4 5 6 7 8))
+8
+; The og version makes way more recursive calls since it calculates (largest(cdr L)) more than once.
+; In the improved version, let saves the answer so Scheme only needs to calculate it one time for each step.
 
 
 
+; The empty-list sumlist question: 
+; sumlist returns 0 for an empty list because there are no numbers to add.
+> (define sumlist
+(lambda (L)
+(if (null? L)
+0
+(if (null? (cdr L))
+(car L)
+(+ (car L) (sumlist(cdr L)))))))
+> (sumlist '())
+0
+
+; I think that the original version was a deliberate choice because it was assuming that the list would always contain one item.
+; Returning 0 for an empty list makes sense because adding nothing gives a total of 0 and it makes the function work more often. 
