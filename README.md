@@ -19,3 +19,12 @@ I think i did pretty well on the assignment. I finished all the main parts and m
 I have no concerns I just need to now install all the software I need!
 
 I used the assignment page, the examples from class, and ChatGPT. I used ChatGPT as a guide while I worked through the assignment. It helped explain the instructions to me, break the assignment into smaller steps, and helped me understand my errors when I got stuck. I still wrote and ran the code myself and worked through each part.
+
+Reflection Promps:
+Getting recursion to work was harder than getting Scheme to run since I used the website. The Scheme website was very frustrating for reasons I already listed. The hardest part of learning a new language is trying not top use the habits of other languages that you know.
+
+One thing that is easier in Scheme than in Python was working with nested expressions since Scheme treats code like lists. The harder portion was definetly the syntax; espeically the use of parenthesis. 
+
+I think that parser will take more code than the evaluator since Scheme already gave us that structure of a syntax tree. 
+
+I think assq took me the longest to understand. Once I understood it literally just looks through a list of pairs and finds the other that matches it started to click. 
